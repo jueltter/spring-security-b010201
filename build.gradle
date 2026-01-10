@@ -6,7 +6,7 @@ plugins {
 
 group = 'tech.samagua'
 version = '0.0.1-SNAPSHOT'
-description = 'Demo project for Spring Boot'
+description = 'spring-security-b010201'
 
 java {
 	toolchain {
