@@ -18,9 +18,15 @@ repositories {
 	mavenCentral()
 }
 
+bootRun {
+	systemProperties = System.properties
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
+	implementation platform('me.paulschwarz:spring-dotenv-bom:5.1.0')
+	developmentOnly 'me.paulschwarz:springboot4-dotenv:5.1.0'
 	testImplementation 'org.springframework.boot:spring-boot-starter-security-test'
 	testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
