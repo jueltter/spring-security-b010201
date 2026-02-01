@@ -18,6 +18,24 @@ spring init --type=gradle-project \
 unzip ./spring-security-b010201.zip -d spring-security-b010201
 ```
 
+## Execution
+To run the application, navigate to the project directory and use the following command:
+
+```bash
+# http profile
+./gradlew bootRun -Dspring.profiles.active=http
+# https profile
+# configure your keystore settings in application-https.yml before running
+./gradlew bootRun -Dspring.profiles.active=https
+```
+
+### Generate a self-signed certificate
+To generate a self-signed certificate for HTTPS, use the following command:
+```bash
+openssl req -newkey rsa:2048 -x509 -keyout key.pem -out cert.pem -days 365
+openssl pkcs12 -export -in cert.pem -inkey key.pem -out certificate.p12 -name "certificate"
+```
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
